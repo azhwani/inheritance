@@ -1,0 +1,35 @@
+package com.test;
+
+public class Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// EVERY INSTANCE OF SUBCLASS IS AN INSTANCE OF SUPERCLASS
+		// EVERY INSTANCE OF SUBCLASS HOLD A REFERENCE OF SUPERCLASS
+		Dog an = new Dog("aa");
+		
+		if(an instanceof Animal)
+			System.out.println("Animal");
+		if(an instanceof Dog)
+			System.out.println("Dog");
+		
+		System.out.println(an.getClass());
+		
+		// PRIVATE MEMBERS ARE NOT INHERTITED BUT A SUBCLASS CAN DEFINE A PRIVATE MEMBER WITH SAME NAME AS THE MEMBER OF SUPERCLASS
+		// FINAL METHOD IS INHERITED BUT IT IS NOT OVERRIDEN MEANS A SUBCLASS CAN CALL A FINAL METHOD OF SUPERCLASS BUT IT CANNOT DEFINE ITS OWN
+		// FINAL VARIABLE IS INHERITED AND A SUBCLASS CAN HAVE THE SAME FINAL VARIABLE AS SUPERCLASS
+		// STATIC MEMBERS ARE HIDEN NOT OVERRIDEN MEANS IF YOU DID NOT USE CLASS NAMES THE STATIC MEMBER IN SUBCLASS WILL HIDE THE STATIC MEMBER IN SUPERCLASS
+		//an.display();
+		
+		// POLYMORPHISM HAPPENS HARE 
+		Animal an2 = new Dog("aa");
+		an2.display();
+		//an2.subdisplay(); YOU CANNOT CALL A SUBCLASS METHOD USING A REFERENCE OF SUPERCLASS
+		
+		Animal an3 = new Animal("aa");
+		an3.display();
+		
+	}
+
+}
